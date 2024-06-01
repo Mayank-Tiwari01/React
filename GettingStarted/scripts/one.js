@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
 const subHeading = React.createElement('h2', {}, 'Welcome to learning React');
 
 const paragraph = React.createElement('p', {}, 'React is a JavaScript library for building user interfaces.');
