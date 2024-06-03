@@ -1,4 +1,5 @@
 /node_modules
 /.parcel-cache
 /GettingStarted/dist
+/GettingStarted/scripts/dist
 /dist
