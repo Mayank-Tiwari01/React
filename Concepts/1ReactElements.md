@@ -1,4 +1,4 @@
-### Updated Code Explanation
+### Code Explanation
 
 ```javascript
 const heading = React.createElement('h1', {className: 'heading'}, 'Hello react');
@@ -73,7 +73,7 @@ root.render(heading);
 
 ### Summary
 
-- **React Elements are JavaScript Objects**: Yes, a React element is essentially a JavaScript object that describes what you want to display.
+- **React Elements are JavaScript Objects**: A React element is essentially a JavaScript object that describes what you want to display.
 - **Props**: The second parameter in `React.createElement` is called props. They are used to pass data and configuration to React elements.
 - **Children**: The third parameter in `React.createElement` is called children. It represents the content or elements nested inside the React element.
 
