@@ -15,7 +15,7 @@ const element = <h1 className="heading">Hello, React!</h1>;
 
 #### Does JSX create JavaScript objects like `React.createElement`?
 
-- **JSX to JavaScript Objects**: Yes, JSX is syntactic sugar for `React.createElement`. When you write JSX, it gets transpiled into `React.createElement` calls, which create JavaScript objects.
+- **JSX to JavaScript Objects**: Yes, JSX is *syntactic sugar* for `React.createElement`. When you write JSX, it gets transpiled into `React.createElement` calls, which create JavaScript objects.
 
 **JSX Example**:
 ```jsx
