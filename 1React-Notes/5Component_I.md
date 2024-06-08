@@ -1,146 +1,106 @@
-1. **React Components**:
-   - Fundamental building blocks of a React application.
-   - Can be class-based or functional.
+#### React Components
 
-2. **Difference Between Class-Based and Function-Based Components**:
-   - **Class-Based Components**:
-     - Stateful components.
-     - Use lifecycle methods (e.g., `componentDidMount`, `componentDidUpdate`).
-     - Example:
-       ```jsx
-       class MyComponent extends React.Component {
-         render() {
-           return <div>Hello, World!</div>;
-         }
-       }
-       ```
-   - **Function-Based Components**:
-     - Stateless components (can use hooks to manage state).
-     - Simpler and more concise.
-     - Example:
-       ```jsx
-       function MyComponent() {
-         return <div>Hello, World!</div>;
-       }
-       ```
+- **React Components**: Components are the building blocks of a React application. They encapsulate pieces of the UI and can be reused throughout the application.
 
-3. **Why Functional Components Were Introduced and Why They Are Better**:
-   - Simplified syntax and easier to read.
-   - Use hooks for state and side effects, promoting functional programming.
-   - Performance benefits due to less overhead than class-based components.
-   - Always start with a capital letter to distinguish them from regular HTML tags.
+#### Difference Between Class-based and Function-based Components
 
-4. **Different Ways of Writing Functional Components**:
-   - Using regular function:
-     ```jsx
-     function MyComponent() {
-       return <div>Hello, World!</div>;
-     }
-     ```
-   - Using arrow function:
-     ```jsx
-     const MyComponent = () => {
-       return <div>Hello, World!</div>;
-     }
-     ```
+- **Class-based Components**: These are ES6 classes that extend `React.Component` and must include a `render` method to return JSX.
+  ```jsx
+  class Welcome extends React.Component {
+    render() {
+      return <h1>Hello, {this.props.name}</h1>;
+    }
+  }
+  ```
 
-5. **Functional Component Composition**:
-   - Combining multiple components to build complex UIs.
-   - Using component tags:
-     ```jsx
-     function App() {
-       return (
-         <div>
-           <Header />
-           <MainContent />
-           <Footer />
-         </div>
-       );
-     }
-     ```
-   - Using component functions directly:
-     ```jsx
-     function Header() {
-       return <h1>Header</h1>;
-     }
-     
-     function App() {
-       return (
-         <div>
-           {Header()}
-           <MainContent />
-           <Footer />
-         </div>
-       );
-     }
-     ```
+- **Function-based Components**: These are simpler components defined as functions. They can now use hooks (e.g., `useState`, `useEffect`) to handle state and lifecycle methods.
+  ```jsx
+  function Welcome(props) {
+    return <h1>Hello, {props.name}</h1>;
+  }
+  ```
 
-6. **Writing JavaScript Inside Components and React Elements**:
-   - Embedding JavaScript expressions within JSX using curly braces `{}`.
-   - Example:
-     ```jsx
-     function MyComponent() {
-       const name = "World";
-       return <div>Hello, {name}!</div>;
-     }
-     ```
-   - Using React elements inside a component:
-     ```jsx
-     function MyComponent() {
-       const element = <h1>Hello, World!</h1>;
-       return <div>{element}</div>;
-     }
-     ```
+#### Why Function-based Components?
 
-7. **How JSX Prevents Cross-Site Scripting (XSS) Attacks**:
-   - JSX escapes any values embedded within `{}` before rendering them.
-   - This means that JSX automatically escapes special characters to prevent code injection.
-   - Example:
-     ```jsx
-     function MyComponent() {
-       const userInput = "<img src='x' onerror='alert(1)'>";
-       return <div>{userInput}</div>; // renders as plain text, not HTML
-     }
-     ```
-   - Ensures that all user inputs are rendered as text, not executable code, mitigating XSS attacks.
+- **Introduction of Hooks**: Function-based components were enhanced with hooks to handle state and side effects, making them more powerful and easier to understand.
+- **Benefits**: They lead to less boilerplate code, better readability, and easier testing. Function-based components always start with a capital letter to differentiate them from regular HTML elements.
 
-### Modern Way of Writing React Code
+#### Different Ways of Writing Functional Components
 
-Given the context of modern React development, here is an example of using a functional component with JSX:
+- **Arrow Functions**:
+  ```jsx
+  const Welcome = (props) => {
+    return <h1>Hello, {props.name}</h1>;
+  };
+  ```
 
+- **Traditional Function Syntax**:
+  ```jsx
+  function Welcome(props) {
+    return <h1>Hello, {props.name}</h1>;
+  }
+  ```
+
+#### Component Composition
+
+- **Using `<Component />`**:
+  ```jsx
+  function App() {
+    return (
+      <div>
+        <Welcome name="Alice" />
+        <Welcome name="Bob" />
+      </div>
+    );
+  }
+  ```
+
+- **Using `{ Component() }`**:
+  ```jsx
+  function Welcome(props) {
+    return <h1>Hello, {props.name}</h1>;
+  }
+
+  function App() {
+    return (
+      <div>
+        {Welcome({ name: 'Alice' })}
+        {Welcome({ name: 'Bob' })}
+      </div>
+    );
+  }
+  ```
+
+#### Writing JavaScript Inside Components
+
+- **Using JavaScript Expressions**:
+  ```jsx
+  function Greeting() {
+    const user = { firstName: 'John', lastName: 'Doe' };
+    return <h1>Hello, {`${user.firstName} ${user.lastName}`}!</h1>;
+  }
+  ```
+
+- **Using React Elements Inside Components**:
+  ```jsx
+  function App() {
+    const element = <h1>Hello, React!</h1>;
+    return (
+      <div>
+        {element}
+        <p>This is a React element inside a component.</p>
+      </div>
+    );
+  }
+  ```
+
+#### How JSX Prevents Cross-Site Scripting (XSS) Attacks
+
+- **XSS Prevention**: JSX automatically escapes any values embedded within it. This means that any content injected into JSX is converted to a string and rendered as text, preventing the execution of malicious scripts.
+
+**Example**:
 ```jsx
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const SubHeading = () => <h2>Welcome to learning React</h2>;
-
-const Paragraph = () => <p>React is a JavaScript library for building user interfaces.</p>;
-
-const Container = () => (
-  <div className="container">
-    <SubHeading />
-    <Paragraph />
-  </div>
-);
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Container />);
+const userInput = '<img src="x" onerror="alert(\'XSS\')" />';
+const element = <div>{userInput}</div>;
+// This will render the raw string without executing the script
 ```
-
-### Explanation
-
-1. **SubHeading Component**:
-   - Functional component defined using an arrow function.
-   - Returns an `<h2>` element.
-
-2. **Paragraph Component**:
-   - Functional component defined using an arrow function.
-   - Returns a `<p>` element.
-
-3. **Container Component**:
-   - Functional component that composes `SubHeading` and `Paragraph` components.
-   - Uses JSX syntax for embedding these components.
-
-4. **Rendering the Container Component**:
-   - Uses `ReactDOM.createRoot` to get the root element.
-   - Renders the `Container` component inside the root element.
