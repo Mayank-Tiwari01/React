@@ -14,8 +14,8 @@ To get started with the content of this repository, follow the steps below:
 
 1. **Clone the Repository**:
    ```sh
-   git clone https://github.com/yourusername/learning-react.git
-   cd learning-react
+   git clone https://github.com/Mayank-Tiwari01/React.git
+   cd React
    ```
 
 2. **Install Dependencies**:
@@ -71,13 +71,10 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ## About
 
-This repository is maintained by [Your Name](https://github.com/Mayank-Tiwari01). It is a work in progress and will be updated frequently with new learnings and examples.
+This repository is maintained by [Mayank Tiwari](https://github.com/Mayank-Tiwari01). It is a work in progress and will be updated frequently with new learnings and examples.
 
 ## Contact
 
 For any questions or suggestions, please reach out via [email](mailto:mayank.tiwari0106@gmail.com).
 
----
-
 Happy Learning!
-```
