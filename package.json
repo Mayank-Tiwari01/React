@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "React from basics to Advance",
   "scripts": {
-    "start": "npx parcel GettingStarted/one.html",
+    "start": "npx parcel index.html",
     "test": "jest"
   },
   "repository": {
