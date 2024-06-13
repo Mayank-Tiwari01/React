@@ -24,12 +24,6 @@ To get started with the content of this repository, follow the steps below:
    npm install
    ```
 
-3. **Run the Development Server**:
-   Start the development server to see the code in action:
-   ```sh
-   npm start
-   ```
-
 ## Notes
 
 Checkout the [Notes](./1React-Notes) section for detailed documentation on various React topics. The notes are arranged in a sequential order to guide you through the learning process:
@@ -54,7 +48,7 @@ Checkout the [Notes](./1React-Notes) section for detailed documentation on vario
    - Code Splitting with React.lazy and Suspense
 
 5. **Project Examples**
-   - Building a Food Delivery App
+   - Building a Food Delivery App (You can see the full project in => [The LunchBox](https://github.com/Mayank-Tiwari01/The-Lunchbox)
    - Other mini-projects to solidify concepts
 
 ## Code Examples
