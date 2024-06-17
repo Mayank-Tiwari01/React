@@ -54,6 +54,7 @@ Let's consider a practical example where we have a list of 10 restaurants manage
 
 ### Why is React So Optimal?
 
+
 1. **Efficiency**:
     - **Object Comparison**: Comparing two JavaScript objects (virtual DOM trees) is faster than comparing two sets of HTML code.
     - **Selective Updates**: By only updating parts of the DOM that have changed, React avoids the performance costs of re-rendering the entire DOM.
