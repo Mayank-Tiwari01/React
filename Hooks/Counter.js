@@ -20,6 +20,3 @@ function CounterApp() {
     </div>
   );
 }
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<CounterApp />);

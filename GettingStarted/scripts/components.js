@@ -20,6 +20,3 @@ let Comp1 = () => (
     {ele}
   </>
 )
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Comp1/>);
