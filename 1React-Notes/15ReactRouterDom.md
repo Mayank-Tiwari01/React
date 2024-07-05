@@ -116,6 +116,7 @@ Single Page Applications are web applications that load a single HTML page and d
 - **Offline Capabilities**: Can work offline with proper service workers.
 
 #### Example Code Using Above Concepts
+** the below code is taken from my project [The LunchBox](https://github.com/Mayank-Tiwari01/The-Lunchbox)
 
 ```javascript
 import React from 'react';
@@ -157,7 +158,6 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<RouterProvider router={router} />);
-** the below code is taken from my project [The LunchBox](https://github.com/Mayank-Tiwari01/The-Lunchbox)
 // Example ResMenu Component
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
