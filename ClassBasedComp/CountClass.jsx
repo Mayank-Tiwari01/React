@@ -17,7 +17,8 @@ class CountClass extends React.Component {
     // Incorrect way to update state
     // this.setState(this.state.count + 1);
     // Correct way to update state
-    this.setState(() => ({ count: this.state.count + 1000999990000 }));
+    this.setState(() => ({ count: this.state.count + 2 }));
+    this.setState(() => ({str : "learning based on class"}))
   }
 
   // Render method to display the component
@@ -28,6 +29,7 @@ class CountClass extends React.Component {
         <p>{this.props.count}</p>
         <h2>{this.state.count}</h2>
         <button onClick={this.handleClick}>Click me as usual</button>
+        <p>{this.state.str}</p>
       </>
     );
   }
